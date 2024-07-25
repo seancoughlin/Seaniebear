@@ -5,12 +5,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <body style="background-color:#EAEAEA;">
+
 <style>
   body{
   font-family: Helvetica, sans-serif;
   font-size:0.8em ;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   }
 
   #button{
@@ -30,57 +33,63 @@
     margin: 5px;
   }
 
+    #menu-button{
+    background-color: #00000;
+    border-style: solid;
+    height: 25px;
+    width: 60px;
+    border-radius: 100%;
+    border-width: 1px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 5px;
+  }
+
   header{
-    padding-bottom: 200px;
+    padding-bottom: 20px;
   }
   
   #header-image{
-    position: absolute;
+    position: relative;
     left: 35px;
     top: 30px;
+        padding: 0px 0px 50px 0px;
   }
 
   #header-description{
     position: absolute;
-    left: 255px;
     top: 30px;
     text-align: left;
+    left: 225px;
   }
 
   #menu{
-    position: absolute;
-    text-align: right;
-    top: 30px;
-    right: 75px;
+    position: relative;
+    text-align: left;
+    left: 225px;
   }
 
   #title{
     float: left;
     left: 25px;
-width: 125px;
+width: 175px;
 height: 25px;
-padding: 20px 100px 0px 15px;
+padding: 20px 100px 150px 15px;
 position: relative;
   }
 
-  #project-images{
+    #project-images{
     padding: 20px;
     gap: 25px;
   }
 
    #project-images img{
-    object-position: top;
-    object-fit: cover;
-    width: 15%;
-    height: 400px;
-  }
-
-    #project-images-social{
-    padding: 20px;
-    gap: 25px;
-  }
-
-   #project-images-social img{
+    vertical-align: top;
     object-position: top;
     object-fit: cover;
     max-width: 15%;
@@ -118,11 +127,9 @@ Open for freelance work <a href="mailto:hi@seaniebear.com"> (inquire here)</a>
 </div>
 
 <div id="menu">
- <a href="index.html" id="button" class="responsive"> Digital </a>
-  <br>
- <a href="physical_design.html" id="button" class="responsive"> Physical </a>
-  <br>
-  <a href="friends.html" id="button" class="responsive"> Friends </a>
+ <a href="index.html" id="menu-button" class="responsive"> Digital </a>
+ <a href="physical_design.html" id="menu-button" class="responsive"> Physical </a>
+  <a href="friends.html" id="menu-button" class="responsive"> Friends </a>
 </div>
 
 </header>
@@ -130,27 +137,6 @@ Open for freelance work <a href="mailto:hi@seaniebear.com"> (inquire here)</a>
   <hr>
 
 <body>
-  
-<div id="title">
-Stasher Emails
-<br>
-Marketing Design
-<br>
-2023-2024
-<br>
-<br>
- &#x21b3; <a href="https://www.figma.com/design/vXnbSzlFgZjvovhNfigvDr/Stasher-Emails?node-id=0-1&m=dev&t=CAAZQ1vASGSC1DCw-1" target="_blank"> View More </a>
-</div>
-
-<div id="project-images">
-<img src="Digital/Group 25.png">
-<img src="Digital/Email-StashInTheSky-01 1.png">
-<img src="Digital/Group 23.png">
-<img src="Digital/Group 55.png">
-</div>
-<br>
-<br>
-<hr>
 
 <div id="title">
 Stasher Social Media
@@ -163,11 +149,37 @@ Marketing Design
  &#x21b3; <a href="https://www.figma.com/design/5TMe7YD0oh1JcPddME05rI/Stasher-Social?node-id=0-1&m=dev" target="_blank"> View More </a>
 </div>
 
-<div id="project-images-social">
+<div id="project-images">
 <img src="Digital/Social-PrimeDayDeals-01 1.png">
 <img src="Digital/Screenshot 2024-01-20 at 10.34 1.png">
 <img src="Digital/Social-Stasher101Recycling-02 1.png">
 <img src="Digital/Social-Snack Time-02.png">
+</div>
+
+    <br>
+<br>
+<hr>
+
+<div id="title">
+Stasher Emails
+<br>
+Marketing Design
+<br>
+2023-2024
+<br>
+<br>
+ &#x21b3; <a href="https://www.figma.com/design/vXnbSzlFgZjvovhNfigvDr/Stasher-Emails?node-id=0-1&m=dev&t=CAAZQ1vASGSC1DCw-1" target="_blank"> View More </a>
+</div>
+
+<div id="row">
+
+<div id="project-images">
+<img src="Digital/Email-LifeWithoutPlastic-04.gif">
+<img src="Digital/Group 58.png">
+<img src="Digital/Newlsetter-July-12.gif">
+<img src="Digital/Group 59.png">
+</div>
+
 </div>
 
 <br>
@@ -175,19 +187,45 @@ Marketing Design
 <hr>
 
 <div id="title">
-Bimbo's 365 Club
+Children Are Plants
 <br>
-Logo Refresh
+Message Campaign Design
 <br>
-2023
+2022
 <br>
 <br>
+ &#x21b3; <a href="Digital/CAP Ad Presentation.pdf" target="_blank"> View More </a>
 </div>
 
+
 <div id="project-images">
-<img src="Digital/Screenshot 2024-01-20 at 10.34 1.png">
-<img src="Digital/Social-Stasher101Recycling-02 1.png">
-<img src="Digital/Social-Snack Time-02.png">
+<img src="Digital/e8c83485_1.png">
+<img src="Digital/CAP Logos-01.png">
+<img src="Digital/CAP Letterhead and Envelope-03.png">
+<img src="Digital/CAP Business Card Options-01.png">
+</div>
+
+<br>
+<br>
+<hr>
+
+<div id="title">
+Children Are Plants
+<br>
+Message Campaign Design
+<br>
+2022
+<br>
+<br>
+ &#x21b3; <a href="Digital/CAP Ad Presentation.pdf" target="_blank"> View More </a>
+</div>
+
+
+<div id="project-images">
+<img src="Digital/e8c83485_1.png">
+<img src="Digital/CAP Logos-01.png">
+<img src="Digital/CAP Letterhead and Envelope-03.png">
+<img src="Digital/CAP Business Card Options-01.png">
 </div>
 
 

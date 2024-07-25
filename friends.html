@@ -6,7 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-
+  <body style="background-color:#EAEAEA;">
+    
 <style>
   body{
   font-family: Helvetica, sans-serif;
@@ -32,34 +33,54 @@
     margin: 5px;
   }
 
+    #menu-button{
+    background-color: #00000;
+    border-style: solid;
+    height: 25px;
+    width: 60px;
+    border-radius: 100%;
+    border-width: 1px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 5px;
+  }
+
   header{
-    padding-bottom: 200px;
+    padding-bottom: 20px;
   }
   
   #header-image{
-    position: absolute;
-    left: 75px;
+    position: relative;
+    left: 35px;
     top: 30px;
+        padding: 0px 0px 50px 0px;
   }
 
   #header-description{
     position: absolute;
-    left: 235px;
     top: 30px;
     text-align: left;
+    left: 225px;
   }
 
   #menu{
-    position: absolute;
-    text-align: right;
-    top: 30px;
-    right: 75px;
+    position: relative;
+    text-align: left;
+    left: 225px;
   }
-  
+
   #title{
-  position: relative;
-  left: 20px;
-  text-align: left;
+    float: left;
+    left: 25px;
+width: 175px;
+height: 25px;
+padding: 20px 100px 150px 15px;
+position: relative;
   }
 
   #space{
@@ -93,11 +114,11 @@ Open for freelance work <a href="mailto:seanmikecoughlin@gmail.com"> (inquire he
 </div>
 
 <div id="menu">
- <a href="index.html" id="button"> Digital </a>
-  <br>
- <a href="physical_design.html" id="button"> Physical </a>
-  <br>
-  <a href="friends.html" id="button"> Friends </a>
+ <a href="index.html" id="menu-button"> Digital </a>
+
+ <a href="physical_design.html" id="menu-button"> Physical </a>
+
+  <a href="friends.html" id="menu-button"> Friends </a>
 </div>
 
 </header>
