@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sean Coughlin Design Archive</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Only use this img rule, remove the other one */
+.gallery-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.03);
+}
+
+/* Lightbox Styles */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox::after {
+  content: '✕';
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive Grid Columns */
+@media (max-width: 1000px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- ORIGINAL HEADER -->
+  <header class="header">
+    <div class="text-group">
+      <h1>
+        Sean Coughlin<br>
+        Freelance Designer<br>
+        BFA Design UC Davis, 2022<br>
+        Oakland, CA<br><br>
+      </h1>
+      <div class="row">
+        <div class="column"><a href="mailto:hi@seaniebear.com">Contact</a></div>
+        <div class="column"><a href="SC Resume 2025.pdf">Resume</a></div>
+        <div class="column"><a href="About.html">About</a></div>
+        <div class="column"><a href="archive.html">Archive</a></div>
+      </div>
+    </div>
+    <div class="header-image">
+      <a href="index.html"><img src="BicycleRider.png" alt="Header Image"></a>
+    </div>
+  </header>
+
+  <hr>
+
+  <!-- IMAGE GRID -->
+  <div class="gallery" id="gallery"></div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Enlarged" id="lightbox-img">
+  </div>
+
+  <script>
+    const imagePaths = [
+      "Project Images/Archive/7+1 Images-01.png",
+      "Project Images/Archive/apap-01.png",
+      "Project Images/Archive/Attachment-1 (19).jpeg",
+      "Project Images/Archive/BD3-01.png",
+      "Project Images/Archive/BITC BPB.png",
+      "Project Images/Archive/Cellophane Megaphone-02.png",
+      "Project Images/Archive/CFE Comic.png",
+      "Project Images/Archive/dg-01.png",
+      "Project Images/Archive/dog pic-01.png",
+      "Project Images/Archive/dogpile-01.png",
+      "Project Images/Archive/forge 1-01.png",
+      "Project Images/Archive/IMG_0958.jpg",
+      "Project Images/Archive/IMG_0971.jpg",
+      "Project Images/Archive/IMG_1662.jpg",
+      "Project Images/Archive/IMG_1058.jpg",
+      "Project Images/Archive/IMG_1663.jpg",
+      "Project Images/Archive/IMG_1669.jpg",
+      "Project Images/Archive/IMG_1679.jpg",
+      "Project Images/Archive/haiku's open mic 2.png",
+      "Project Images/Archive/friends.png",
+      "Project Images/Archive/biker layers-01.png",
+      "Project Images/Archive/KDaViS stickers-02.png",
+      "Project Images/Archive/KDaViS stickers-01.png",
+      "Project Images/Archive/Haikus DIGITAL.png",
+      "Project Images/Archive/Boards-03.png",
+      "Project Images/Archive/Boards-02.png",
+      "Project Images/Archive/Boards-01.png",
+      "Project Images/Archive/ASUCDEC Post 1 Final.png",
+      "Project Images/Archive/Locum Cover-01.png",
+      "Project Images/Archive/Ostrich Print_edited.jpg",
+      "Project Images/Archive/cobalt blue cover final-01.png",
+      "Project Images/Archive/scuttle.gif",
+      "Project Images/Archive/Botanik - YM Package Mocks-03.png",
+      "Project Images/Archive/derby black bg cova-01.png",
+      "Project Images/Archive/Derby Alt 2.png",
+      "Project Images/Archive/IMG-6593.jpg",
+      "Project Images/Archive/plague party.png",
+      "Project Images/Archive/parlor hour mouth 2-01.png",
+      "Project Images/Archive/PFFM final.png",
+      "Project Images/Archive/IMG_3640.jpg",
+      "Project Images/Archive/60 Song Cover.png",
+      "Project Images/Archive/BD3-01.png",
+      "Project Images/Archive/kneel.jpg",
+      "Project Images/Archive/WPA Poster-01.png",
+      "Project Images/Archive/Cellophane Megaphone-02.png",
+      "Project Images/Archive/JINK Dogs with Hiaku-02.png",
+      "Project Images/Archive/350x75_ICONxDVTI-01.png",
+      "Project Images/Archive/IMG_1769.jpg",
+      "Project Images/Archive/IMG_1693.jpg",
+      "Project Images/Archive/IMG_4305 (1).jpg",
+      "Project Images/Archive/Lithography Collage.jpg",
+      "Project Images/Archive/IMG_5506.jpg",
+      "Project Images/Archive/IMG_5505.jpg",
+      "Project Images/Archive/IMG_5504.jpg",
+      "Project Images/Archive/IMG_4744 (1).jpg",
+      "Project Images/Archive/IMG_4220.jpg",
+      ];
+
+    // Shuffle images
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    // Populate grid
+    const gallery = document.getElementById('gallery');
+    shuffle(imagePaths);
+    imagePaths.forEach(path => {
+      const container = document.createElement('div');
+      container.classList.add('gallery-item');
+
+      const img = document.createElement('img');
+      img.src = path;
+      img.alt = "Design Archive Image";
+      img.onclick = () => openLightbox(path);
+
+      container.appendChild(img);
+      gallery.appendChild(container);
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(src) {
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+    }
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+  </script>
+
+</body>
+</html>
