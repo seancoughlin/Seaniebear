@@ -10,17 +10,98 @@
   <style>
 .gallery {
   display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+=======
   grid-template-columns: repeat(5, 1fr); /* 5 images per row */
+
   gap: 10px;
   padding: 20px;
 }
 
+
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Only use this img rule, remove the other one */
+.gallery-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+=======
 .gallery img {
   width: 100%;      /* fill the grid column width */
   height: auto;     /* keep original aspect ratio */
   object-fit: contain; /* optional, ensures whole image fits */
+
   cursor: pointer;
   transition: transform 0.2s ease;
+}
+
+
+.gallery-item img:hover {
+  transform: scale(1.03);
+}
+
+/* Lightbox Styles */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox::after {
+  content: '✕';
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive Grid Columns */
+@media (max-width: 1000px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
     .gallery img:hover {
@@ -78,6 +159,7 @@
         grid-template-columns: 1fr;
       }
     }
+
   </style>
 </head>
 
@@ -172,7 +254,9 @@
       "Project Images/Archive/IMG_5504.jpg",
       "Project Images/Archive/IMG_4744 (1).jpg",
       "Project Images/Archive/IMG_4220.jpg",
-    ];
+
+      ];
+
 
     // Shuffle images
     function shuffle(array) {
@@ -183,15 +267,20 @@
     }
 
     // Populate grid
-    const gallery = document.getElementById('gallery');
-    shuffle(imagePaths);
-    imagePaths.forEach(path => {
-      const img = document.createElement('img');
-      img.src = path;
-      img.alt = "Design Archive Image";
-      img.onclick = () => openLightbox(path);
-      gallery.appendChild(img);
-    });
+const gallery = document.getElementById('gallery');
+shuffle(imagePaths);
+imagePaths.forEach(path => {
+  const container = document.createElement('div');
+  container.classList.add('gallery-item');
+
+  const img = document.createElement('img');
+  img.src = path;
+  img.alt = "Design Archive Image";
+  img.onclick = () => openLightbox(path);
+
+  container.appendChild(img);
+  gallery.appendChild(container);
+});
 
     // Lightbox
     const lightbox = document.getElementById('lightbox');
