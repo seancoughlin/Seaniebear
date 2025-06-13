@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sean Coughlin</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <body style="background-color:#EAEAEA;">
+
+<style>
+  body{
+  font-family: Helvetica, sans-serif;
+  font-size:0.8em ;
+  overflow-x: hidden;
+  }
+
+  #button{
+    background-color: #00000;
+    border-style: solid;
+    height: 35px;
+    width: 75px;
+    border-radius: 100%;
+    border-width: 1px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 35px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+    #menu-button{
+    background-color: #00000;
+    border-style: solid;
+    height: 25px;
+    width: 60px;
+    border-radius: 100%;
+    border-width: 1px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 25px 5px 0px 0px;
+  }
+
+  header{
+    padding-bottom: 20px;
+  }
+  
+  #header-image{
+    position: relative;
+    float: left;
+    clear: left;
+    left: 35px;
+    top: 30px;
+  }
+
+  #header-description{
+    position: relative;
+    top: 30px;
+    text-align: left;
+    left: 100px;
+    padding: 0px 0px 25px 0px;
+  }
+
+  #menu{
+    position: relative;
+    text-align: left;
+    left: 225px;
+  }
+
+  #title{
+    float: left;
+    left: 25px;
+width: 175px;
+height: 25px;
+padding: 20px 200px 100px 15px;
+position: relative;
+  }
+
+    #project-images{
+    padding: 10px;
+    gap: 25px;
+  }
+
+   #project-images img{
+    margin: 0px 0px 10px 5px;
+    vertical-align: top;
+    object-position: top;
+    object-fit: cover;
+    max-width: 35%;
+    height: auto;
+  }
+
+    #foot {
+      text-align: center;
+    }
+
+  </style>
+
+</head>
+
+<header>
+
+<div id="header-image">
+  <img src="BicycleRider.png" width="125px" height="125px">
+</div>
+
+<div id="header-description">
+   Sean Coughlin is a designer,
+<br> musician, and <a href="https://www.seanandeldon.com/" target="_blank">bicycle enthusiast</a>
+<br>
+<br>
+Most recently a production
+<br>
+designer at <a href="https://www.stasherbag.com/" target="blank"> Stasher </a>
+<br>
+<br>
+Based in Oakland
+<br>
+UC Davis Design BFA, 2022
+<br>
+Open for freelance work <a href="mailto:hi@seaniebear.com"> (inquire here)</a>
+</div>
+
+<div id="menu">
+ <a href="index.html" id="menu-button" class="responsive"> Digital </a>
+ <a href="physical_design.html" id="menu-button" class="responsive"> Physical </a>
+  <a href="friends.html" id="menu-button" class="responsive"> Friends </a>
+</div>
+
+</header>
+
+  <hr>
+
+<body>
+
+UnLink: A Case Study
+
+<div id="project-images">
+<img src="biker layers-01.png">
+<br>
+<img src="ASUCDEC Post 1 Final.png">
+<br>
+<img src="IMG-6593.jpg">
+<br>
+<img src="derby cova final.png">
+<br>
+<img src="kDaViS stickers-01.png">
+<br>
+<img src="kDaViS stickers-02.png">
+<br>
+<img src="PH poster.png">
+<br>
+<img src="Haikus DIGITAL.png">
+<br>
+<img src="haiku's open mic 2.png">
+
+<br>
+
+</div>
+
+<footer>
+  <br>
+  <br>
+  <hr>
+  <br>
+
+  <div id="foot">
+  <a href="MunchitinProcessManual.html" id="button" target="_self">  back to top </a>
+  <br>
+  <br>
+  Last Updated: 07/23/2024
+  <br>
+   &#169; Sean Coughlin 2024
+  <br>
+  <br>
+  </div>
+
+  </footer>
+
+
+</body>
+
+</html>
